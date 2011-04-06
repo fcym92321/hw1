@@ -4,8 +4,10 @@
 
  // wrapping around when the rightmost column is reached
 
+#include <curses.h>   // required
+#include <iostream>
 
-   #include <curses.h>   // required
+using namespace std;
 
 
    int r,c, // current row and column (upper-left is (0,0))
@@ -72,7 +74,7 @@
 
           d = getch(); // curses call to input from keyboard
 
-          if (d == ’q’) break; // quit?
+          if (d == 'q') break; // quit?
 
           draw(d); // draw the character
 
