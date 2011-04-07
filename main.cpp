@@ -1,6 +1,8 @@
-#include <curses.h>
 #include <iostream>
+#include <curses.h>
 #include <string>
+#include <cmath>
+#include <vector>
 
 using namespace std;
 
@@ -32,8 +34,22 @@ int DecToBin(int iNumber)
 
 
 int main(){
-cout<<2^3<<endl;
+vector< vector<int> > vec;
+vec.push_back(vector<int>(3,0));
+vec.push_back(vector<int>(3,1));
+
+//display the matrix
 /*
+for(int i=0;i<vec.size();i++){
+	for(int j=0;j<vec[i].size();j++){
+		cout<<vec[i][j]<<" ";
+	}
+	cout<<endl;
+}
+*/
+
+//Window initialization
+
  WINDOW *wnd;
  wnd = initscr(); // curses call to initialize window
   noecho(); // curses call to set no echoing
@@ -41,19 +57,25 @@ cout<<2^3<<endl;
       clear(); // curses call to clear screen, send cursor to position (0,0)
       refresh(); // curses call to implement all changes since last refresh
       r = 0; c = 0;
-*/
+
+
 //string instr;
-char d;
-  while (1) {
+char d,*str;
+//  while ((d = getch())!='\n') {
+while(1){
 //getline (cin,instr);
-d = getch();
+
 move(r,c);
+scanw("%s",str);
+
+printw("input: %s",str);
+
 /*
 for(int i = 0; i<instr.length(); i++){
 	insch(instr[i]);
 }
 */
-addch(d);
+//addch(d);
 refresh();
 
  c++; // go to next row
