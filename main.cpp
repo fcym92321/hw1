@@ -30,8 +30,10 @@ int DecToBin(int iNumber)
 }
 
 
-int main(){
 
+int main(){
+cout<<2^3<<endl;
+/*
  WINDOW *wnd;
  wnd = initscr(); // curses call to initialize window
   noecho(); // curses call to set no echoing
@@ -39,7 +41,7 @@ int main(){
       clear(); // curses call to clear screen, send cursor to position (0,0)
       refresh(); // curses call to implement all changes since last refresh
       r = 0; c = 0;
-
+*/
 //string instr;
 char d;
   while (1) {
